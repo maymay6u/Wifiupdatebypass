@@ -7,15 +7,15 @@ const telegramLink = document.getElementById('telegramLink');
 const sound = document.getElementById('hackingSound');
 
 const steps = [
-  { text: 'Your System been hacked ⚠️', duration: 800 },
-  { text: 'Hacking by Htetmyat!', duration: 850 },
-  { text: 'Scanning all data...', duration: 850 },
-  { text: 'Your Telegram account been hacked ⚠️', duration: 850 },
-  { text: 'Processing...', duration: 300 },
-  { text: 'Your Mobilelegend account been hacked ⚠️', duration: 800 },
-  { text: 'System error detected...', duration: 800 },
-  { text: 'Sorry for about that – from Htetmyat Aung', duration: 900 },
-  { text: 'Good bye', duration: 800 }
+  { text: 'Your System been hacked ⚠️', duration: 1000 },
+  { text: 'Hacking by Htetmyat!', duration: 1000 },
+  { text: 'Scanning all data...', duration: 1000 },
+  { text: 'Your Telegram account been hacked ⚠️', duration: 1200 },
+  { text: 'Processing...', duration: 1000 },
+  { text: 'Your Mobilelegend account been hacked ⚠️', duration: 1200 },
+  { text: 'System error detected...', duration: 1200 },
+  { text: 'Sorry for about that – from Htetmyat Aung', duration: 1300 },
+  { text: 'Good bye', duration: 1000 }
 ];
 
 startBtn.onclick = () => {
