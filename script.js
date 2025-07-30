@@ -1,55 +1,50 @@
-let prankStarted = false;
+const screen = document.getElementById('screen');
+const content = document.getElementById('content');
+const startBtn = document.getElementById('startBtn');
+const message = document.getElementById('message');
+const finalMessage = document.getElementById('finalMessage');
+const telegramLink = document.getElementById('telegramLink');
+const sound = document.getElementById('hackingSound');
 
-function startPrank() {
-  if (!prankStarted) {
-    prankStarted = true;
-    document.getElementById('black-screen').style.display = 'block'; // Black screen appears
-    showHackingText("Your System been hacked⚠️", "green");
-    
-    setTimeout(() => {
-      showHackingText("Hacking by Htetmyat!", "red");
-      playHackingSound();
-      
-      setTimeout(() => {
-        showHackingText("Scanning...", "red");
-        
-        setTimeout(() => {
-          showHackingText("Your Telegram account been hacked⚠️", "red");
-          
-          setTimeout(() => {
-            showHackingText("Your Mobilelegend account been hacked⚠️", "red");
-            
-            setTimeout(() => {
-              showHackingText("Sorry for about that – from Htetmyat Aung", "red");
-              
-              setTimeout(() => {
-                showHackingText("Good bye", "green");
-                setTimeout(() => {
-                  showChatboxLink();
-                }, 3000); // After "Good bye", show chatbox link
-              }, 5000); // Display Good bye for 5 seconds
-            }, 7000); // Display Mobilelegend hacked for 7 seconds
-          }, 10000); // Display Telegram hacked for 10 seconds
-        }, 15000); // Display Scanning for 15 seconds
-      }, 15000); // Display Hacking by Htetmyat for 15 seconds
-    }, 3000); // Display Your System hacked for 3 seconds
-  }
-}
+const steps = [
+  { text: 'Your System been hacked ⚠️', duration: 20000 },
+  { text: 'Hacking by Htetmyat!', duration: 15000 },
+  { text: 'Scanning all data...', duration: 15000 },
+  { text: 'Your Telegram account been hacked ⚠️', duration: 15000 },
+  { text: 'Processing...', duration: 10000 },
+  { text: 'Your Mobilelegend account been hacked ⚠️', duration: 10000 },
+  { text: 'System error detected...', duration: 7000 },
+  { text: 'Sorry for about that – from Htetmyat Aung', duration: 10000 },
+  { text: 'Good bye', duration: 5000 }
+];
 
-function showHackingText(text, color) {
-  let prankText = document.getElementById('prank-text');
-  prankText.innerHTML = text;
-  prankText.style.color = color;
-}
-
-function playHackingSound() {
-  let sound = new Audio('assets/hacking.mp3');
+startBtn.onclick = () => {
+  screen.style.display = 'none';
+  startBtn.style.display = 'none';
+  message.classList.remove('hidden');
   sound.play();
-}
+  let i = 0;
 
-function showChatboxLink() {
-  let prankText = document.getElementById('prank-text');
-  prankText.innerHTML = 'Come chatbox: <a href="https://t.me/ano5s4" target="_blank">t.me/ano5s4</a>';
-  prankText.style.color = 'blue';
-  prankText.style.fontSize = '18px';
-}
+  function nextStep() {
+    if (i < steps.length) {
+      message.dataset.text = steps[i].text;
+      message.textContent = steps[i].text;
+      setTimeout(() => {
+        i++;
+        nextStep();
+      }, steps[i].duration);
+    } else {
+      message.classList.add('hidden');
+      finalMessage.textContent = 'Come Chatbox 👇';
+      finalMessage.classList.remove('hidden');
+      telegramLink.classList.remove('hidden');
+    }
+  }
+
+  nextStep();
+};
+
+setTimeout(() => {
+  screen.style.display = 'none';
+  content.classList.remove('hidden');
+}, 3000); // 3 sec black screen
