@@ -9,12 +9,12 @@ const sound = document.getElementById('hackingSound');
 const steps = [
   { text: 'Your System been hacked ⚠️', duration: 1000 },
   { text: 'Hacking by Htetmyat!', duration: 1000 },
-  { text: 'Scanning all data...', duration: 1000 },
-  { text: 'Your Telegram account been hacked ⚠️', duration: 1200 },
-  { text: 'Processing...', duration: 1000 },
-  { text: 'Your Mobilelegend account been hacked ⚠️', duration: 1200 },
-  { text: 'System error detected...', duration: 1200 },
-  { text: 'Sorry for about that – from Htetmyat Aung', duration: 1300 },
+  { text: 'Scanning all data...', duration: 2000 },
+  { text: 'Your Telegram account been hacked ⚠️', duration: 2000 },
+  { text: 'Processing...', duration: 2000 },
+  { text: 'Your Mobilelegend account been hacked ⚠️', duration: 2200 },
+  { text: 'System error detected...', duration: 2000 },
+  { text: 'Sorry👨‍💻🥹 -Devlope by Htetmyat Aung', duration: 1300 },
   { text: 'Good bye', duration: 1000 }
 ];
 
